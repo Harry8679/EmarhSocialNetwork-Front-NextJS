@@ -1,3 +1,4 @@
+import { UserProvider } from '../context/index.context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/Navbar';
 import Header from 'next/head';
@@ -7,7 +8,7 @@ import 'antd/dist/reset.css';
 
 function MyApp({ Component, pageProps }) {
     return (
-    <>
+    <UserProvider>
         <Header>
             <link rel='stylesheet' href='/css/styles.css' />
         </Header>
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }) {
             position='top-center'
         />
         <Component {...pageProps} />
-    </>
+    </UserProvider>
     );
 }
 
