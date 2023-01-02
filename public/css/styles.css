@@ -5,9 +5,16 @@ img {
     width: 50%;
 }
 
-.bg-default-image {
-    background-image: url('/img/pedestrians.jpg');
+.image-bg {
     background-size: 100%;
     height: 150px;
     text-shadow: 2px 2px 8px #000;
+}
+
+.bg-default-image {
+    background-image: url('/img/pedestrians.jpg');
+}
+
+.bg-bridge {
+    background-image: url('/img/bridge.jpg');
 }

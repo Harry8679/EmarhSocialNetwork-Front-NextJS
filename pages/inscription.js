@@ -41,7 +41,7 @@ const Register = () => {
     }
     return (
         <div className="container-fluid">
-            <div className='row py-5 bg-default-image text-light'>
+            <div className='row py-5 image-bg bg-default-image text-light'>
                 <div className='col text-center'>
                     <h1>Page d'inscription</h1>
                 </div>
@@ -76,6 +76,14 @@ const Register = () => {
                                 <span className='btn btn-primary btn-sm'>Connexion</span>
                             </Link>
                     </Modal>
+                </div>
+            </div>
+
+            <div className='row'>
+                <div className='col'>
+                    <p className='text-center'>
+                        Avez-vous déjà un <Link href='/connexion'>compte</Link> ?
+                    </p>
                 </div>
             </div>
         </div>

@@ -6,9 +6,11 @@ const AuthForm = ({
     email, setEmail,
     password, setPassword,
     secret, setSecret,
-    loading
+    loading,
+    page
 }) => (
     <form onSubmit={handleSubmit}>
+        {page !== 'login' && (
         <div className="form-group p-2">
             <small>
                 <label className="text-muted">Votre Nom</label>
@@ -17,7 +19,7 @@ const AuthForm = ({
             value={name} onChange={(e) => setName(e.target.value)}
             type='text' className='form-control' 
             placeholder='Entrez votre nom' />
-        </div>
+        </div>)}
 
         <div className="form-group p-2">
             <small>
@@ -39,6 +41,8 @@ const AuthForm = ({
                 placeholder='Entrez votre mot de passe' />
         </div>
 
+        {page !== 'login' && (
+        <>
         <div className="form-group p-2">
             <small>
                 <label className="text-muted">Choisis une question</label>
@@ -60,9 +64,15 @@ const AuthForm = ({
                 type='text' className='form-control' 
                 placeholder='Ecrivez-votre réponse' />
         </div>
+        </>
+        )}
 
         <div className="form-group p-2">
-            <button disabled={!name || !email || !password || !secret} 
+            <button 
+                disabled={
+                    page === 'login' ? 
+                    !email || !password :
+                    !name || !email || !password || !secret} 
                 className="btn btn-primary col-12">
                     {loading ? <SyncOutlined spin className='py-1' /> : "Valider"}
                 </button>
