@@ -31,7 +31,8 @@ const Login = () => {
                 token: data.token
             });
             // Save in local storage
-            window.localStorage.setItem('auth', JSON.stringify(data));            
+            window.localStorage.setItem('auth', JSON.stringify(data));
+            router.push('/');       
             // console.log(data);
             // router.push('/');
             
